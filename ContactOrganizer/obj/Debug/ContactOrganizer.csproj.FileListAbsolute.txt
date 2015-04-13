@@ -31,3 +31,14 @@ C:\PROG37721\ContactOrganizer\ContactOrganizer\obj\Debug\ContactOrganizer.csproj
 C:\PROG37721\ContactOrganizer\ContactOrganizer\obj\Debug\ContactOrganizer.Form1.resources
 C:\PROG37721\ContactOrganizer\ContactOrganizer\obj\Debug\ContactOrganizer.Properties.Resources.resources
 C:\PROG37721\ContactOrganizer\ContactOrganizer\obj\Debug\ContactOrganizer.csproj.GenerateResource.Cache
+C:\Users\Faraz\Documents\Programming and Coding\GitHub\ContactsDB\ContactsDB\ContactOrganizer\bin\Debug\ContactOrganizer.exe.config
+C:\Users\Faraz\Documents\Programming and Coding\GitHub\ContactsDB\ContactsDB\ContactOrganizer\obj\Debug\ContactOrganizer.exe
+C:\Users\Faraz\Documents\Programming and Coding\GitHub\ContactsDB\ContactsDB\ContactOrganizer\obj\Debug\ContactOrganizer.pdb
+C:\Users\Faraz\Documents\Programming and Coding\GitHub\ContactsDB\ContactsDB\ContactOrganizer\bin\Debug\Clients.mdf
+C:\Users\Faraz\Documents\Programming and Coding\GitHub\ContactsDB\ContactsDB\ContactOrganizer\bin\Debug\Clients_log.ldf
+C:\Users\Faraz\Documents\Programming and Coding\GitHub\ContactsDB\ContactsDB\ContactOrganizer\bin\Debug\ContactOrganizer.exe
+C:\Users\Faraz\Documents\Programming and Coding\GitHub\ContactsDB\ContactsDB\ContactOrganizer\bin\Debug\ContactOrganizer.pdb
+C:\Users\Faraz\Documents\Programming and Coding\GitHub\ContactsDB\ContactsDB\ContactOrganizer\obj\Debug\ContactOrganizer.csprojResolveAssemblyReference.cache
+C:\Users\Faraz\Documents\Programming and Coding\GitHub\ContactsDB\ContactsDB\ContactOrganizer\obj\Debug\ContactOrganizer.Form1.resources
+C:\Users\Faraz\Documents\Programming and Coding\GitHub\ContactsDB\ContactsDB\ContactOrganizer\obj\Debug\ContactOrganizer.Properties.Resources.resources
+C:\Users\Faraz\Documents\Programming and Coding\GitHub\ContactsDB\ContactsDB\ContactOrganizer\obj\Debug\ContactOrganizer.csproj.GenerateResource.Cache
