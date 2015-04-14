@@ -30,7 +30,6 @@ namespace ContactOrganizer
             dg1.Click += dg1_Click;
             clearText();
             control("i");
-            txtSearch.KeyPress += txtSearch_KeyPress;
         }
 
         void dg1_Click(object sender, EventArgs e)
@@ -49,7 +48,7 @@ namespace ContactOrganizer
         //Gets data from the database and fills the dg1 with said data
         private void retrieveTData()
         {
-            string connStr = "Data Source=(LocalDB)\\v11.0;AttachDbFilename=C:\\Users\\Zukaro\\Documents\\GitHub\\ContactsDB\\ContactOrganizer\\Clients.mdf;Integrated Security=True"; //TO-DO: make the connection string relative, so that it will work on any machine
+            string connStr = "Data Source=(LocalDB)\\v11.0;AttachDbFilename=C:\\PROG37721\\ContactOrganizer\\ContactOrganizer\\Clients.mdf;Integrated Security=True";
             string select = "SELECT * FROM [tContacts]";
 
             try
@@ -282,73 +281,6 @@ namespace ContactOrganizer
                 cmdInsert.Enabled = false;
                 cmdUpdate.Enabled = true;
                 cmdDelete.Enabled = true;
-            }
-        }
-
-        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //This method searches the database as you type.  It is designed such that it will show you all records which contain what you've typed.
-            //For example, typing the letter "e" will show all records which contain the letter "e".  This is case insensitive, so will return both lower and upper case.
-
-            //TO-DO:
-            //1. Disable context menu (so no one can copy and paste)
-            //2. If the field is highlighted and all characters deleted, it wont instantly revert to the retrieveTData() method the way it does when no records are found
-            //3. When the table is empty, search functionality needs to be greyed out; otherwise the user will consistently get the "Table is empty" message on every keypress
-
-
-            char c = e.KeyChar;
-            String searchSQL = "SELECT * FROM [tContacts] WHERE [lname] LIKE @search OR [fname] LIKE @search OR [phone] LIKE @search OR [email] LIKE @search";
-            SqlDataReader readSearch = null;
-            sqlCmd = new SqlCommand();
-            StringBuilder buildSearch = new StringBuilder();
-            String searchFor = "";
-
-            if (c == 8)
-            {
-                searchFor = txtSearch.Text;
-                buildSearch.Append(searchFor);
-                if (buildSearch.Length > 0)
-                {
-                    buildSearch.Remove(buildSearch.Length - 1, 1);
-                }
-                searchFor = buildSearch.ToString();
-            }
-            else
-            {
-                searchFor = txtSearch.Text + c;
-            }
-
-            try
-            {
-                sqlConn.Open();
-                sqlCmd.Connection = sqlConn;
-                sqlCmd.CommandText = searchSQL;
-                sqlCmd.Parameters.Add("@search", System.Data.SqlDbType.VarChar, 15).Value = "%" + searchFor + "%";
-                readSearch = sqlCmd.ExecuteReader();
-                if (readSearch.HasRows)
-                {
-                    bindingSource1.DataSource = readSearch;
-                    dg1.DataSource = bindingSource1;
-                    dg1.ClearSelection();
-                }
-                else
-                {
-                    retrieveTData();
-                }
-                readSearch.Close();
-                sqlConn.Close();
-            }
-            catch (SqlException ex)
-            {
-                if (readSearch != null)
-                {
-                    readSearch.Close();
-                }
-                if (sqlConn != null)
-                {
-                    sqlConn.Close();
-                }
-                MessageBox.Show(ex.Message, "SQL Error");//Debug message
             }
         }
     }
